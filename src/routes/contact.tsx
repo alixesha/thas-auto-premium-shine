@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Facebook, Phone } from "lucide-react";
-import { FB, PageHero, PHONE, Reveal, TEL } from "@/components/site";
+import { Facebook, MapPin, Phone } from "lucide-react";
+import { ADDRESS, FB, HOURS, MAPS, PageHero, PHONE, Reveal, TEL } from "@/components/site";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

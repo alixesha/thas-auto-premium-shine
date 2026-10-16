@@ -1,9 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Phone, Star } from "lucide-react";
+import { ArrowRight, Cog, Disc, Gauge, MapPin, Phone, Snowflake, Star, Wrench } from "lucide-react";
 import hero from "@/assets/hero.jpg";
-import engine from "@/assets/engine.jpg";
+import shopPhoto from "@/assets/shop-engine.jpg.asset.json";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
-import { CallBand, PHONE, Reveal, TEL } from "@/components/site";
+import { ADDRESS, CallBand, HOURS, MAPS, PHONE, Reveal, TEL } from "@/components/site";
+
+const quick = [
+  { icon: Gauge, label: "Diagnostics" },
+  { icon: Disc, label: "Brakes" },
+  { icon: Cog, label: "Transmission" },
+  { icon: Wrench, label: "Engine Tune-Up" },
+  { icon: Snowflake, label: "A/C & Cooling" },
+];
 import { services } from "@/lib/services";
 
 export const Route = createFileRoute("/")({
@@ -40,10 +48,22 @@ function Index() {
             <a href={TEL} className="btn-ember"><Phone size={18} /> Call {PHONE}</a>
             <Link to="/services" className="btn-ghost">Our Services <ArrowRight size={18} /></Link>
           </div>
+          <a href={MAPS} target="_blank" rel="noreferrer" className="animate-rise mt-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary" style={{ animationDelay: "600ms" }}>
+            <MapPin size={16} className="text-primary" /> {ADDRESS} · {HOURS}
+          </a>
         </div>
       </section>
 
-      <div className="overflow-hidden border-y border-border bg-card py-5">
+      <div className="relative z-10 mx-auto -mt-20 grid max-w-7xl grid-cols-2 gap-3 px-6 sm:grid-cols-3 lg:grid-cols-5">
+        {quick.map((q, i) => (
+          <Link key={q.label} to="/services" className={`animate-rise group flex flex-col items-center gap-4 rounded-2xl border border-border bg-card/80 p-6 text-center backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary hover:shadow-[var(--shadow-ember)] ${i === 4 ? "col-span-2 sm:col-span-1" : ""}`} style={{ animationDelay: `${700 + i * 100}ms` }}>
+            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-ember text-primary-foreground transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110"><q.icon size={26} /></span>
+            <span className="font-display text-xl font-bold uppercase">{q.label}</span>
+          </Link>
+        ))}
+      </div>
+
+      <div className="mt-16 overflow-hidden border-y border-border bg-card py-5">
         <div className="animate-marquee flex w-max gap-12 whitespace-nowrap font-display text-3xl uppercase text-muted-foreground">
           {[...services, ...services].map((s, i) => <span key={i}>{s.title} <span className="text-primary">✦</span></span>)}
         </div>
