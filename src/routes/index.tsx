@@ -26,8 +26,8 @@ function Index() {
   return (
     <>
       <section className="relative flex min-h-screen items-center overflow-hidden">
-        <video src="https://thas-auto-premium-shine.lovable.app/__l5e/assets-v1/3d059fd9-2e0a-41b1-a369-d02e2bdabc33/hero-video.mp4" poster={hero} autoPlay muted loop playsInline ... />
-        preload="auto" aria-label="Mechanic working under a car on a lift" className="animate-kenburns absolute inset-0 h-full w-full object-cover" />
+        <video src="https://thas-auto-premium-shine.lovable.app/__l5e/assets-v1/3d059fd9-2e0a-41b1-a369-d02e2bdabc33/hero-video.mp4" poster={hero} autoPlay muted loop playsInline
+          preload="auto" aria-label="Mechanic working under a car on a lift" className="animate-kenburns absolute inset-0 h-full w-full object-cover" />
         <div className="bg-fade absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pt-24">
           <p className="animate-rise text-sm font-bold uppercase tracking-[0.3em] text-primary">Precision Auto Care</p>
