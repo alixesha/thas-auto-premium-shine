@@ -5,9 +5,6 @@ import { Phone, Menu, X } from "lucide-react";
 export const PHONE = "(408) 738-2633";
 export const TEL = "tel:+14087382633";
 export const FB = "https://www.facebook.com/ThasAutoRepair/";
-export const ADDRESS = "3447 El Camino Real, Santa Clara, CA 95051";
-export const HOURS = "Mon – Fri · 8:00 AM – 5:00 PM";
-export const MAPS = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Tha's Auto Repair, 3447 El Camino Real, Santa Clara, CA 95051");
 
 export function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -75,8 +72,6 @@ export function Footer() {
         </div>
         <div className="flex flex-col gap-2 text-sm">
           <a href={TEL} className="font-display text-2xl text-primary">{PHONE}</a>
-          <a href={MAPS} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary">{ADDRESS}</a>
-          <p className="text-muted-foreground">{HOURS}</p>
           <a href={FB} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary">Follow us on Facebook</a>
         </div>
       </div>
