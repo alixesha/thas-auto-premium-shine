@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Phone, Star } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import engine from "@/assets/engine.jpg";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import { CallBand, PHONE, Reveal, TEL } from "@/components/site";
 import { services } from "@/lib/services";
 
@@ -25,7 +26,7 @@ function Index() {
   return (
     <>
       <section className="relative flex min-h-screen items-center overflow-hidden">
-        <img src={hero} alt="Car on a lift in Tha's Auto Repair shop" className="animate-kenburns absolute inset-0 h-full w-full object-cover" />
+        <video src={heroVideo.url} poster={hero} autoPlay muted loop playsInline preload="auto" aria-label="Mechanic working under a car on a lift" className="animate-kenburns absolute inset-0 h-full w-full object-cover" />
         <div className="bg-fade absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pt-24">
           <p className="animate-rise text-sm font-bold uppercase tracking-[0.3em] text-primary">Precision Auto Care</p>
