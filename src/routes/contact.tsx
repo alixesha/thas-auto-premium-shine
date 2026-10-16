@@ -35,6 +35,17 @@ function Contact() {
             <p className="mt-2 font-display text-5xl font-black uppercase md:text-6xl">Facebook</p>
           </a>
         </Reveal>
+        <Reveal delay={200} className="md:col-span-2">
+          <a href={MAPS} target="_blank" rel="noreferrer" className="flex flex-col gap-6 rounded-3xl border border-border bg-card p-12 transition-all duration-500 hover:-translate-y-2 hover:border-primary md:flex-row md:items-center md:justify-between">
+            <div>
+              <MapPin size={36} className="text-primary" />
+              <p className="mt-8 text-sm font-bold uppercase tracking-[0.3em] text-muted-foreground">Visit the shop</p>
+              <p className="mt-2 font-display text-4xl font-black uppercase md:text-5xl">{ADDRESS}</p>
+              <p className="mt-3 text-muted-foreground">{HOURS}</p>
+            </div>
+            <span className="btn-ember shrink-0">Get Directions</span>
+          </a>
+        </Reveal>
       </section>
     </>
   );
